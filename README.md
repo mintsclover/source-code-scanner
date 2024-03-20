@@ -4,7 +4,7 @@
 **소스코드 스캐너**<br>
 
 <div>
-  <img src="main.svg" width="400px" height="auto">
+  <img src="main.svg" width="auto" height="auto">
 </div>
 
 ## 개요 | Outline
