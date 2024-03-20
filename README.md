@@ -3,9 +3,9 @@
 # Source Code Scanner
 **소스코드 스캐너**<br>
 
-<div>
+<a href="https://kevalsil.com/source-code-scanner/" target="_blank">
   <img src="main.svg" width="auto" height="auto">
-</div>
+</a>
 
 ## 개요 | Outline
 
