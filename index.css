@@ -91,6 +91,13 @@
                 cursor: pointer;
             }
 
+    #pre{
+        font-family: "Source Code Pro", monospace;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+    }
+
 #footer {
     margin: 20px;
     text-align: center;
