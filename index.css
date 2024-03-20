@@ -1,0 +1,134 @@
+#header {
+    height: 100px;
+    background-image:linear-gradient(to right, #3CB371, #5CFFAA);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+    #title {
+        margin-left: 20px;
+        color: white;
+    }
+    #icon{
+        margin-right: 20px;
+    }
+        .no_dot {
+
+            list-style-type: none;
+    
+        }
+        .no_dot li{
+            display: inline-block; 
+        }
+
+#section {
+}
+    #controlBox{
+        text-align: center;
+    }
+        #selectBox{
+            margin: 20px;
+            text-align: center;
+        }
+            select::-ms-expand { 
+                display: none;
+            }
+            .select {
+                width: 150px;
+                height: 35px;
+                background: url('https://freepikpsd.com/media/2019/10/down-arrow-icon-png-7-Transparent-Images.png') calc(100% - 5px) center no-repeat;
+                background-size: 20px;
+                padding: 5px 30px 5px 10px;
+                border-radius: 4px;
+                outline: 0 none;
+            }
+            .select option {
+                background: #3CB371;
+                color: #fff;
+                padding: 3px 0;
+            }
+        #inputBox{
+            margin: 20px;
+            text-align: center;
+        }
+            .filebox .upload-name {
+                height: 40px;
+                padding: 0 10px;
+                vertical-align: middle;
+                border: 1px solid #dddddd;
+                width: 10%;
+                color: #999999;
+            }
+            .filebox label {
+                text-align: center;
+                padding: 10px 20px;
+                color: #fff;
+                vertical-align: middle;
+                background-color: #999999;
+                cursor: pointer;
+                width: 10%;
+                height: 40px;
+                margin-left: 10px;
+            }
+            .filebox input[type="file"] {
+                position: absolute;
+                width: 0;
+                height: 0;
+                padding: 0;
+                overflow: hidden;
+                border: 0;
+            }
+        #copyBox{
+            margin: 20px;
+            text-align: center;
+            display: none;
+        }
+            input.img-button {
+                border: none;
+                background: url("copy.svg") no-repeat;
+                width: 50px;
+                height: 50px;
+                cursor: pointer;
+            }
+
+#footer {
+    margin: 20px;
+    text-align: center;
+    color: gray;
+}
+
+#log>div {
+    color: #313131;
+    border-top: 1px solid #dadada;
+    padding: 9px;
+    display: flex;
+}
+
+#log>div:first-child {
+    border: 0;
+}
+
+.status {
+    min-width: 250px;
+}
+
+#log {
+    border: 1px solid #dadada;
+    padding: 10px;
+    margin-top: 20px;
+    min-height: 100px;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+progress {
+    display: block;
+    width: 100%;
+    transition: opacity 0.5s linear;
+}
+
+progress[value="1"] {
+    opacity: 0.5;
+}

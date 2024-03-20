@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Source Code Scanner</title>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.15.1/beautify.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.15.1/beautify-css.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.15.1/beautify-html.js"></script>
+    <script src='https://unpkg.com/tesseract.js@4.0.1/dist/tesseract.min.js'></script>
+    <script src='index.js'></script>
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    <link rel="stylesheet" href='index.css'>
+
+    <link rel="shortcut icon" href="favicon.ico">
+	<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+</head>
+
+<body>
+    <div id="header">
+        <div id="title">
+            <h1>Source Code Scanner</h1>
+        </div>
+        <div id="icon">
+            <ul class="no_dot">
+                <li><a href="#" class="fas fa-smile fa-3x" target="_blank"><span class="label">Blog</span></a></li>
+                <li><a href="https://github.com/kevalsil" class="fas fa-smile fa-3x" target="_blank"><span
+                            class="label">GitHub</span></a></li>
+                <li><a href="#" class="fab fa-instagram fa-3x" target="_blank"><span class="label">Instagram</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="section">
+        <div id="controlBox">
+            <div id="selectBox">
+                <select class="select" id="langsel" onchange="window.lastFile && recognizeFile(window.lastFile)">
+                    <option value='afr'> Afrikaans </option>
+                    <option value='ara'> Arabic </option>
+                    <option value='aze'> Azerbaijani </option>
+                    <option value='bel'> Belarusian </option>
+                    <option value='ben'> Bengali </option>
+                    <option value='bul'> Bulgarian </option>
+                    <option value='cat'> Catalan </option>
+                    <option value='ces'> Czech </option>
+                    <option value='chi_sim'> Chinese </option>
+                    <option value='chi_tra'> Traditional Chinese </option>
+                    <option value='chr'> Cherokee </option>
+                    <option value='dan'> Danish </option>
+                    <option value='deu'> German </option>
+                    <option value='ell'> Greek </option>
+                    <option value='eng' selected> English </option>
+                    <option value='enm'> English (Old) </option>
+                    <option value='meme'> Internet Meme </option>
+                    <option value='epo'> Esperanto </option>
+                    <option value='epo_alt'> Esperanto alternative </option>
+                    <option value='est'> Estonian </option>
+                    <option value='eus'> Basque </option>
+                    <option value='fin'> Finnish </option>
+                    <option value='fra'> French </option>
+                    <option value='frk'> Frankish </option>
+                    <option value='frm'> French (Old) </option>
+                    <option value='glg'> Galician </option>
+                    <option value='grc'> Ancient Greek </option>
+                    <option value='heb'> Hebrew </option>
+                    <option value='hin'> Hindi </option>
+                    <option value='hrv'> Croatian </option>
+                    <option value='hun'> Hungarian </option>
+                    <option value='ind'> Indonesian </option>
+                    <option value='isl'> Icelandic </option>
+                    <option value='ita'> Italian </option>
+                    <option value='ita_old'> Italian (Old) </option>
+                    <option value='jpn'> Japanese </option>
+                    <option value='kan'> Kannada </option>
+                    <option value='kor'> Korean </option>
+                    <option value='lav'> Latvian </option>
+                    <option value='lit'> Lithuanian </option>
+                    <option value='mal'> Malayalam </option>
+                    <option value='mkd'> Macedonian </option>
+                    <option value='mlt'> Maltese </option>
+                    <option value='msa'> Malay </option>
+                    <option value='nld'> Dutch </option>
+                    <option value='nor'> Norwegian </option>
+                    <option value='pol'> Polish </option>
+                    <option value='por'> Portuguese </option>
+                    <option value='ron'> Romanian </option>
+                    <option value='rus'> Russian </option>
+                    <option value='slk'> Slovakian </option>
+                    <option value='slv'> Slovenian </option>
+                    <option value='spa'> Spanish </option>
+                    <option value='spa_old'> Old Spanish </option>
+                    <option value='sqi'> Albanian </option>
+                    <option value='srp'> Serbian (Latin) </option>
+                    <option value='swa'> Swahili </option>
+                    <option value='swe'> Swedish </option>
+                    <option value='tam'> Tamil </option>
+                    <option value='tel'> Telugu </option>
+                    <option value='tgl'> Tagalog </option>
+                    <option value='tha'> Thai </option>
+                    <option value='tur'> Turkish </option>
+                    <option value='ukr'> Ukrainian </option>
+                    <option value='vie'> Vietnamese </option>
+                </select>
+                <select class="select" id="clangsel" onchange="window.lastFile && recognizeFile(window.lastFile)">
+                    <option value='js' selected> JavaScript </option>
+                    <option value='css'> CSS </option>
+                    <option value='html'> HTML </option>
+                </select>
+            </div>
+            <div id="inputBox">
+                <div class="filebox">
+                    <input class="upload-name" value="attached file" placeholder="attached file">
+                    <label for="file">File Search</label>
+                    <input type="file" id="file" onchange="recognizeFile(window.lastFile=this.files[0])">
+                </div>
+            </div>
+        </div>
+        <div id="copyBox"><input type="button" class="img-button" id="copyButton"></div>
+        <div id="log"></div>
+    </div>
+    <div id="footer" style="font-size:0.7em">
+        Made by <a href="https://github.com/kevalsil" target="_blank">KEVAL</a> using open sources <a href="https://github.com/tesseract-ocr/tesseract" target="_blank">tesseract</a> and <a href="https://github.com/beautifier/js-beautify" target="_blank">js-beautify</a>.
+    </div>
+    <script>
+        window.onload = function () {
+            document.getElementById("copyButton").onclick = () => {
+                var myTextarea = document.getElementById("pre");
+                // textarea의 내용을 복사한다.
+                window.navigator.clipboard.writeText(myTextarea.textContent).then(() => {
+                    // 복사가 완료되면 호출된다.
+                    alert("복사완료 | Copy complete");
+                });
+            };
+
+            $("#file").on('change', function () {
+                var fileName = $("#file").val();
+                $(".upload-name").val(fileName);
+            });
+        };
+
+    </script>
+</body>
+
+</html>
