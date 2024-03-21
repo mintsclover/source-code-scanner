@@ -2,10 +2,13 @@
 
 # Code Scanner OCR
 **코드 스캐너 OCR**<br>
+Image to text
 
-<a href="https://kevalsil.com/code-scanner/" target="_blank">
-  <img src="main.svg" width="auto" height="auto">
-</a>
+<div>
+  <img src="img/test.png" width="400px" height="auto">
+  <br>⬇️<br>
+  <img src="img/test_result.jpeg" width="500px" height="auto">
+</div>
 
 </div>
 
@@ -17,14 +20,16 @@
 이런 상황에서 유용합니다!
 * 소스코드가 종이 출력물 상태로만 있을 때
 * 소스코드가 PDF 파일 형식으로만 있을 때
-* 소스코드가 복사가 안돼서 캡쳐했을 때
+* 캡처한 소스코드를 텍스트 형식으로 얻고 싶을 때
+* 손으로 적은 소스코드를 텍스트 형식으로 얻고 싶을 때
 
 The program scans images containing source code using Optical Character Recognition (OCR) technology and displays the code textually. The outputted code can be copied as is.
 
-It is useful in situations such as:
+This is useful in these situations!
 * When the source code exists only in hard copy format.
-* When the source code is in PDF file format.
-* When the source code cannot be copied directly, so it was captured instead.
+* When the source code exists only in PDF file format.
+* When you want to obtain captured source code in text format.
+* When you want to obtain handwritten source code in text format.
 
 ## 사용법 | How to use
 
