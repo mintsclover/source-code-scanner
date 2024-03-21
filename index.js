@@ -26,8 +26,6 @@ function progressUpdate(packet) {
             var pre = document.createElement('pre');
             pre.id = 'pre';
             var codeText_raw = packet.data.data.text;
-            codeText_raw = codeText_raw.replace(/’/g, "'");
-            codeText_raw = codeText_raw.replace(/‘/g, "'");
             var codeText_refined;
             if (clang == "js") {
                 codeText_refined = js_beautify(codeText_raw)
