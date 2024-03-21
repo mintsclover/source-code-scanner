@@ -3,7 +3,7 @@
 # CodeScan OCR
 **코드스캔 OCR**<br>
 
-<a href="https://kevalsil.com/codescan/" target="_blank">
+<a href="https://kevalsil.com/code-scan/" target="_blank">
   <img src="main.svg" width="auto" height="auto">
 </a>
 
@@ -30,7 +30,7 @@ It is useful in situations such as:
 
 <div align="center">
 
-➡️[This Link](https://kevalsil.com/codescan/)⬅️
+➡️[This Link](https://kevalsil.com/code-scan/)⬅️
 
 **이 링크에서 사용할 수 있습니다.**<br>
 **You can find it here**
