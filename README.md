@@ -35,7 +35,7 @@ This is useful in these situations!
 
 <div align="center">
 
-➡️[This Link](https://kevalsil.com/source-code-scanner/)⬅️
+➡️[This Link](https://gitpage.kevalsil.com/source-code-scanner/)⬅️
 
 **이 링크에서 사용할 수 있습니다.**<br>
 **You can find it here**
